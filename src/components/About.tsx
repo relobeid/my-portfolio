@@ -67,7 +67,7 @@ const About = () => {
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          {interests.map((interest, index) => (
+          {interests.map((interest) => (
             <motion.div
               key={interest.title}
               className={`p-6 rounded-lg ${interest.bgColor} backdrop-blur-sm`}

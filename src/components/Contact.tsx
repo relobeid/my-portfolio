@@ -5,24 +5,24 @@ import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import Image from 'next/image';
 
-const socialLinks = [
-  {
-    name: 'GitHub',
-    url: 'https://github.com/relobeid1217',
-    icon: '/github.svg'
-  },
-  {
-    name: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/relobeid/',
-    icon: '/linkedin.svg'
-  }
-];
-
 const Contact = () => {
   useEffect(() => {
     // Initialize EmailJS with your public key
     emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '');
   }, []);
+
+  const socialLinks = [
+    {
+      name: 'GitHub',
+      url: 'https://github.com/relobeid1217',
+      icon: '/icons/github.svg'
+    },
+    {
+      name: 'LinkedIn',
+      url: 'https://www.linkedin.com/in/relobeid/',
+      icon: '/icons/linkedin.svg'
+    }
+  ];
 
   const [formData, setFormData] = useState({
     name: '',
@@ -66,9 +66,34 @@ const Contact = () => {
           className="max-w-2xl mx-auto"
         >
           <h2 className="text-4xl font-bold text-center mb-8 text-white">Contact Me</h2>
-          <p className="text-gray-300 text-center mb-12">
+          <p className="text-gray-300 text-center mb-8">
             Feel free to reach out for collaborations or just a friendly hello
           </p>
+
+          {/* Social Links */}
+          <div className="flex justify-center space-x-6 mb-12">
+            {socialLinks.map((link) => (
+              <motion.a
+                key={link.name}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-gray-800 rounded-full hover:bg-gray-700 transition-colors"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <div className="relative w-8 h-8">
+                  <Image
+                    src={link.icon}
+                    alt={link.name}
+                    fill
+                    className={`${link.name === 'GitHub' ? 'invert' : ''}`}
+                    sizes="32px"
+                  />
+                </div>
+              </motion.a>
+            ))}
+          </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
@@ -132,7 +157,7 @@ const Contact = () => {
 
             {status === 'success' && (
               <p className="text-green-500 text-center mt-4">
-                Message sent successfully! I'll get back to you soon.
+                Message sent successfully! I will get back to you soon.
               </p>
             )}
             {status === 'error' && (

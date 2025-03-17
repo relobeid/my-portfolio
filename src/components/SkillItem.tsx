@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, MotionProps } from 'framer-motion';
 import Image from 'next/image';
 
 interface SkillItemProps {
@@ -8,9 +8,9 @@ interface SkillItemProps {
   icon: string;
   bgColor?: string;
   iconClass?: string;
-  initial?: any;
-  animate?: any;
-  transition?: any;
+  initial?: MotionProps['initial'];
+  animate?: MotionProps['animate'];
+  transition?: MotionProps['transition'];
 }
 
 const SkillItem = ({ name, icon, bgColor = 'bg-gray-800', iconClass = 'object-contain', initial, animate, transition }: SkillItemProps) => {
