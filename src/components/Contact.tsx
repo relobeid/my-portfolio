@@ -14,7 +14,7 @@
 //   const socialLinks = [
 //     {
 //       name: 'GitHub',
-//       url: 'https://github.com/relobeid1217',
+//       url: 'https://github.com/relobeid',
 //       icon: '/icons/github.svg'
 //     },
 //     {
@@ -190,7 +190,7 @@ const Contact = () => {
   const socialLinks = [
     {
       name: 'GitHub',
-      url: 'https://github.com/relobeid1217',
+      url: 'https://github.com/relobeid',
       icon: '/icons/github.svg'
     },
     {
