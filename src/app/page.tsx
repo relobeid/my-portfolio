@@ -5,22 +5,21 @@ import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
-import Resume from '@/components/Resume';
+// import Resume from '@/components/Resume';
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('home');
 
-  // Update active section based on scroll position
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'projects', 'about', 'contact'];
-      const scrollPosition = window.scrollY + 100;
+      const sections = ['home', 'about', 'projects', 'contact'];
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
 
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
-          const { top, bottom } = element.getBoundingClientRect();
-          if (top <= scrollPosition && bottom > scrollPosition) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
             setActiveSection(section);
             break;
           }
@@ -28,6 +27,7 @@ export default function Home() {
       }
     };
 
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -37,7 +37,7 @@ export default function Home() {
       <Hero />
       <About />
       <Projects />
-      <Resume />
+      {/* <Resume /> */}
       <Contact />
 
       {/* Navigation */}
@@ -45,7 +45,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex space-x-8">
-              {['home', 'projects', 'about', 'contact'].map((section) => (
+              {['home', 'about', 'projects', 'contact'].map((section) => (
                 <button
                   key={section}
                   onClick={() => {

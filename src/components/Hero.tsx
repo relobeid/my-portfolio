@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
   return (
-    <section className="h-screen flex items-center justify-center relative overflow-hidden bg-gray-900">
+    <section id="home" className="h-screen flex items-center justify-center relative overflow-hidden bg-gray-900">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -12,9 +12,9 @@ const Hero = () => {
         className="text-center z-10"
       >
         <h1 className="text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
-          Ramez
+          Ramez Elobeid
         </h1>
-        <p className="text-2xl text-gray-300 mb-8">Software Engineer & Tech Enthusiast</p>
+        <p className="text-2xl text-gray-300 mb-8">Software Engineering Student & Entrepreneur</p>
         <motion.div
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
