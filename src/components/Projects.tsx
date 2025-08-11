@@ -193,14 +193,14 @@ const Projects = () => {
                     </button>
                   )}
                   {project.live && (
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full transition-colors"
-                    >
-                      Live Demo
-                    </a>
+                                          <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full transition-colors"
+                      >
+                        Website
+                      </a>
                   )}
                 </div>
               </div>
