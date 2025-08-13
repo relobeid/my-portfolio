@@ -45,7 +45,7 @@ const Projects = () => {
       technologies: ["Unity 2022.3 LTS", "C# 10.0", "URP", "Git LFS", "CI/CD"],
       image: "/unity_logo.png",
       github: "https://github.com/relobeid/Unity-Create-With-Code",
-      live: "#"
+      live: "https://relobeid.github.io/unity/"
     },
     {
       title: "Shellfish Pollution Prediction",
