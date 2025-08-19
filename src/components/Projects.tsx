@@ -20,7 +20,7 @@ const Projects = () => {
         "Docker",
       ],
       image: "/FEATUREPULSE copy.png",
-      github: "https://github.com/relobeid/FeaturePulse",
+      github: undefined,
       live: "https://featurepulse1.vercel.app/",
     },
     {
@@ -28,7 +28,7 @@ const Projects = () => {
       description: "Wuduh makes web content easier to read by adjusting the text to your level—so you never go 'What the?!' again!",
       technologies: ["JavaScript", "Vite", "OpenAI API", "Chrome API", "AWS Lambda", "Supabase"],
       image: "/wuduh_logo.png",
-      github: undefined,
+      github: "https://github.com/wuduh",
       live: "https://wuduh.vercel.app/",
     },
     {
@@ -61,7 +61,7 @@ const Projects = () => {
         "Agile",
       ],
       image: "/shellfish.png",
-      github: "https://github.com/relobeid/shellfish-pollution-prediction",
+      github: undefined,
       live: "https://shellfish-pollution-prediction.pages.dev/",
     },
   ];
