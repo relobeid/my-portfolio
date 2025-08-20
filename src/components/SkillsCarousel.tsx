@@ -63,10 +63,10 @@ const SkillsCarousel = () => {
   if (!mounted) {
     return (
       <div className="w-full max-w-4xl mx-auto">
-        <h2 className="text-lg font-medium text-gray-800 mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+        <h2 className="text-lg font-bold text-gray-800 mb-6" style={{ fontFamily: 'Georgia, serif' }}>
           Skills
         </h2>
-        <div className="border-l-2 border-r-2 border-gray-300 rounded-tl-md rounded-br-md bg-white py-3 h-16 flex items-center justify-center">
+        <div className="border-l-2 border-r-2 border-gray-300 rounded-tl-md rounded-br-md py-3 h-16 flex items-center justify-center">
           <div className="text-gray-500">Loading skills...</div>
         </div>
       </div>
@@ -82,7 +82,7 @@ const SkillsCarousel = () => {
         className="mb-6"
       >
         <h2 
-          className="text-lg font-medium text-gray-800 mb-6"
+          className="text-lg font-bold text-gray-800 mb-6"
           style={{ fontFamily: 'Georgia, serif' }}
         >
           Skills
@@ -96,7 +96,7 @@ const SkillsCarousel = () => {
         className="relative"
       >
         {/* Main carousel container */}
-        <div className="border-l-2 border-r-2 border-gray-300 rounded-tl-md rounded-br-md overflow-hidden relative bg-white py-3">
+        <div className="border-l-2 border-r-2 border-gray-300 rounded-tl-md rounded-br-md overflow-hidden relative py-3">
           <div className="relative flex items-center">
             <motion.div
               className="flex items-center gap-8 md:gap-10"
@@ -128,8 +128,8 @@ const SkillsCarousel = () => {
           </div>
           
           {/* Gradient fade masks for smooth edges */}
-          <div className="absolute left-0 top-0 w-12 h-full bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 w-12 h-full bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 w-12 h-full bg-gradient-to-r from-[#F5F5DC] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 w-12 h-full bg-gradient-to-l from-[#F5F5DC] to-transparent z-10 pointer-events-none" />
         </div>
       </motion.div>
     </div>

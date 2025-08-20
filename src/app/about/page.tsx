@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { FaGithub, FaExternalLinkAlt, FaChevronDown, FaChevronUp, FaArrowLeft } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaChevronDown, FaChevronUp, FaArrowLeft, FaUniversity, FaBuilding } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -111,9 +111,9 @@ export default function AboutPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="mb-8"
         >
-          <div className="mb-6">
+          <div className="mb-4">
             <h1 className="text-4xl font-bold text-gray-800">About Me</h1>
           </div>
           
@@ -134,10 +134,10 @@ export default function AboutPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="space-y-6 mb-16"
+          className="space-y-6 mb-8 border-t border-gray-400 pt-4"
         >
           {projects.map((project, index) => (
-            <div key={index} className="border-b border-gray-200 pb-4">
+            <div key={index} className="pb-4">
               <div 
                 className="flex items-center justify-between cursor-pointer py-2 hover:bg-gray-100/50 rounded-lg px-2 transition-colors"
                 onClick={() => toggleProject(index)}
@@ -234,7 +234,7 @@ export default function AboutPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mb-16"
+          className="mb-8 border-t border-gray-400 pt-4"
         >
           <SkillsCarousel />
         </motion.div>
@@ -244,14 +244,14 @@ export default function AboutPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mb-16"
+          className="mb-8 border-t border-gray-400 pt-4"
         >
-          <h2 className="text-lg font-medium text-gray-800 mb-6">Experience</h2>
+          <h2 className="text-lg font-bold text-gray-800 mb-6" style={{ fontFamily: 'Georgia, serif' }}>Experience</h2>
           
           <div className="space-y-4">
             <div className="flex items-center justify-between py-2">
               <div className="flex items-center space-x-3">
-                <span className="text-blue-600 font-medium text-sm">🎓</span>
+                <FaUniversity className="text-blue-600" size={18} />
                 <span className="text-gray-700">Salisbury University</span>
               </div>
               <span className="text-gray-500 text-sm">Student</span>
@@ -259,7 +259,7 @@ export default function AboutPage() {
             
             <div className="flex items-center justify-between py-2">
               <div className="flex items-center space-x-3">
-                <span className="text-green-600 font-medium text-sm">💼</span>
+                <FaBuilding className="text-green-600" size={18} />
                 <span className="text-gray-700">Salisbury University / IPMA / Nova Lisbon</span>
               </div>
               <span className="text-gray-500 text-sm">Developer</span>
@@ -272,9 +272,9 @@ export default function AboutPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="border-t border-gray-200 pt-12"
+          className="border-t border-gray-400 pt-4"
         >
-          <h2 className="text-xl font-medium text-gray-800 mb-8">Get in touch</h2>
+          <h2 className="text-lg font-bold text-gray-800 mb-8" style={{ fontFamily: 'Georgia, serif' }}>Get in touch</h2>
           
           <form onSubmit={handleContactSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
