@@ -34,24 +34,96 @@ body {
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #ededed;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+body {
+  background: linear-gradient(180deg, #000000 0%, #050208 50%, #000000 100%);
+  color: var(--foreground);
+  font-family: 'Georgia', 'Times New Roman', serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Cartoony Night Sky with Whimsical Stars */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.stars::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent url("data:image/svg+xml,%3csvg width='300' height='300' xmlns='http://www.w3.org/2000/svg'%3e%3cdefs%3e%3cpattern id='stars' x='0' y='0' width='300' height='300' patternUnits='userSpaceOnUse'%3e%3cg%3e%3cpath d='M50 40 L52 46 L58 46 L53 50 L55 56 L50 52 L45 56 L47 50 L42 46 L48 46 Z' fill='%23ffd700' opacity='0.3'/%3e%3cpath d='M150 70 L151.5 74 L155.5 74 L152.25 76.5 L153.75 80.5 L150 78 L146.25 80.5 L147.75 76.5 L144.5 74 L148.5 74 Z' fill='%23ffffff' opacity='0.2'/%3e%3cpath d='M250 50 L251 53 L254 53 L251.5 55 L252.5 58 L250 56.5 L247.5 58 L248.5 55 L246 53 L249 53 Z' fill='%23ffd700' opacity='0.2'/%3e%3cpath d='M80 120 L81.5 124 L85.5 124 L82.25 126.5 L83.75 130.5 L80 128 L76.25 130.5 L77.75 126.5 L74.5 124 L78.5 124 Z' fill='%23ffffff' opacity='0.3'/%3e%3cpath d='M200 150 L201 153 L204 153 L201.5 155 L202.5 158 L200 156.5 L197.5 158 L198.5 155 L196 153 L199 153 Z' fill='%23ffd700' opacity='0.25'/%3e%3cpath d='M120 200 L121.5 204 L125.5 204 L122.25 206.5 L123.75 210.5 L120 208 L116.25 210.5 L117.75 206.5 L114.5 204 L118.5 204 Z' fill='%23ffffff' opacity='0.15'/%3e%3cpath d='M30 180 L31 183 L34 183 L31.5 185 L32.5 188 L30 186.5 L27.5 188 L28.5 185 L26 183 L29 183 Z' fill='%23ffd700' opacity='0.3'/%3e%3cpath d='M270 180 L271 183 L274 183 L271.5 185 L272.5 188 L270 186.5 L267.5 188 L268.5 185 L266 183 L269 183 Z' fill='%23ffffff' opacity='0.1'/%3e%3c/g%3e%3c/pattern%3e%3c/defs%3e%3crect width='100%25' height='100%25' fill='url(%23stars)'/%3e%3c/svg%3e") repeat;
+  animation: twinkle 15s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.4; }
+  25% { opacity: 0.1; }
+  50% { opacity: 0.5; }
+  75% { opacity: 0.05; }
+}
+
+/* Fixed Moon */
+.stars::after {
+  content: '';
+  position: fixed;
+  top: 8%;
+  right: 15%;
+  width: 80px;
+  height: 80px;
+  background: #fef3c7;
+  border-radius: 50%;
+  box-shadow: 
+    inset -10px -10px 0 #fde68a,
+    0 0 25px rgba(254, 243, 199, 0.2),
+    0 0 50px rgba(254, 243, 199, 0.1);
+  animation: eerieGlow 12s infinite ease-in-out;
+  z-index: 2;
+}
+
+@keyframes eerieGlow {
+  0%, 100% { 
+    box-shadow: 
+      inset -10px -10px 0 #fde68a,
+      0 0 25px rgba(254, 243, 199, 0.2),
+      0 0 50px rgba(254, 243, 199, 0.1);
+  }
+  33% { 
+    box-shadow: 
+      inset -10px -10px 0 #fde68a,
+      0 0 35px rgba(254, 243, 199, 0.3),
+      0 0 60px rgba(254, 243, 199, 0.15);
+  }
+  66% { 
+    box-shadow: 
+      inset -10px -10px 0 #fde68a,
+      0 0 15px rgba(254, 243, 199, 0.15),
+      0 0 40px rgba(254, 243, 199, 0.08);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* No shooting stars - removed per user request */
+
+/* Main content styling */
+.main-content {
+  position: relative;
+  z-index: 10;
 }
 
