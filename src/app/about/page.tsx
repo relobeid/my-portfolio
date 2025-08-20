@@ -22,7 +22,7 @@ const projects = [
   {
     title: "Wuduh",
     description: "Traditional language learning tools force users to allocate dedicated study time and stagnate at fixed levels, making improvement feel like a chore. Created an AI-powered browser extension that seamlessly integrates into users' daily web browsing, automatically adapting content complexity as they improve. As users naturally read and learn online, Wuduh learns their progress and grows with them, eliminating the need for additional study time while providing continuous, personalized language development.",
-    github: "https://github.com/relobeid/wuduh",
+    github: "https://github.com/wuduh",
     live: "https://wuduh.vercel.app/",
     image: "/wuduh_examples.png",
     logo: "/wuduh_logo.png",
