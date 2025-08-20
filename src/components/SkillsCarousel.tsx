@@ -54,7 +54,31 @@ const SkillsCarousel = () => {
   const [mounted, setMounted] = useState(false);
 
   // Create multiple copies for seamless infinite scroll
-  const duplicatedSkills = [...skills, ...skills, ...skills];
+  const duplicatedSkills = [...skills, ...skills, ...skills, ...skills];
+
+  // Add CSS animation keyframes
+  useEffect(() => {
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      
+      .animate-scroll {
+        animation: scroll 30s linear infinite;
+      }
+      
+      .animate-scroll:hover {
+        animation-play-state: paused;
+      }
+    `;
+    document.head.appendChild(style);
+    
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
 
   useEffect(() => {
     setMounted(true);
@@ -98,19 +122,8 @@ const SkillsCarousel = () => {
         {/* Main carousel container */}
         <div className="border-l-2 border-r-2 border-gray-300 rounded-tl-md rounded-br-md overflow-hidden relative py-3">
           <div className="relative flex items-center">
-            <motion.div
-              className="flex items-center gap-8 md:gap-10"
-              animate={{
-                x: [0, -(100 * skills.length)]
-              }}
-              transition={{
-                x: {
-                  repeat: Infinity,
-                  repeatType: "loop",
-                  duration: skills.length * 4, // 4 seconds per skill for smooth motion
-                  ease: "linear"
-                }
-              }}
+            <div
+              className="flex items-center gap-8 md:gap-10 animate-scroll"
             >
               {duplicatedSkills.map((skill, index) => (
                 <div
@@ -124,7 +137,7 @@ const SkillsCarousel = () => {
                   </div>
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
           
           {/* Gradient fade masks for smooth edges */}
