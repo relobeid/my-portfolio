@@ -50,6 +50,11 @@ const projects = [
     live: "https://shellfish-pollution-prediction.pages.dev/",
     image: "/shellfish_example.png",
     skills: ["FastAPI", "PostgreSQL", "PostGIS", "Mapbox", "Python", "Async", "Geospatial"]
+  },
+  {
+    title: "RouteIQ",
+    description: "Traffic optimization is a critical challenge in urban planning, but existing solutions lack the power of modern ML and real-time data processing. Inspired by Google Cloud OnAir's 'BigQuery + Vertex AI: Unify Data and AI for Accelerated Results', I built a comprehensive traffic simulator to test ML-powered route optimization algorithms. Designed a Go backend with the Gin framework integrated with AlloyDB for storage and BigQuery for analytics. Trained VertexAI prediction models and built an interactive traffic visualization dashboard with Mapbox integration. Currently working on this project with plans to deploy soon.",
+    skills: ["Go", "Gin", "Next.js", "Google Cloud", "AlloyDB", "BigQuery", "VertexAI", "Mapbox"]
   }
 ];
 
